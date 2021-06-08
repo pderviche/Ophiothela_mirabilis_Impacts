@@ -1,0 +1,10 @@
+species;group;replicate;ww;dw;area;n
+Ophiothela mirabilis;NA;1;1.5562;0.5403;NA;262
+Ophiothela mirabilis;NA;2;0.8149;0.312;NA;169
+Ophiothela mirabilis;NA;3;1.1525;0.4429;NA;247
+Leptogorgia punicea;treatment;1;2.547;1.7291;43.78;NA
+Leptogorgia punicea;treatment;2;1.9402;1.5091;31.43;NA
+Leptogorgia punicea;treatment;3;2.4616;2.1167;51.57;NA
+Leptogorgia punicea;host control;1;5.8273;4.1134;82.55;NA
+Leptogorgia punicea;host control;2;2.5601;1.4939;39.12;NA
+Leptogorgia punicea;host control;3;3.171;1.9103;35.85;NA

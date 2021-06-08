@@ -1,0 +1,28 @@
+group;time;replicate;particle;carbon
+treatment;0to1;1;498;-0.031288698
+host control;0to1;1;2872;-0.073790809
+artifact control;0to1;1;-1095;-0.073275364
+treatment;0to1;2;3096;0.43785294
+host control;0to1;2;3456;0.043773161
+artifact control;0to1;2;3331;0.073507426
+treatment;0to1;3;2209;0.061989077
+host control;0to1;3;844;-0.189333626
+artifact control;0to1;3;2190;0.150350035
+treatment;1to2;1;3017;0.0051332
+host control;1to2;1;5382;0.172823777
+artifact control;1to2;1;-1978;0.096146778
+treatment;1to2;2;2250;-0.141428814
+host control;1to2;2;1327;0.136264847
+artifact control;1to2;2;3174;-0.020312187
+treatment;1to2;3;2906;0.167003917
+host control;1to2;3;3656;0.284450916
+artifact control;1to2;3;-742;0.134957027
+treatment;2to3;1;738;0.034466056
+host control;2to3;1;3567;-0.023181892
+artifact control;2to3;1;2374;-0.02158625
+treatment;2to3;2;1209;0.08234081
+host control;2to3;2;3818;-0.018991905
+artifact control;2to3;2;-5822;-0.086132042
+treatment;2to3;3;665;-0.119318909
+host control;2to3;3;2329;-0.035176182
+artifact control;2to3;3;-2818;0.000813942
