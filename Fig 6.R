@@ -4,13 +4,14 @@
 #Packages
 library(ggplot2)
 
-#Figure 7
+#Figure 6
+#Fig. 6 Relationship between the particle concentration (particle mL-1 ) and the estimated carbon content (µg C mL-1 ) of the seawater samples. Black dots are raw data, and lines and shaded areas represent GLM predictions ± standard error
 data <- read.csv(file="particles.csv",header=TRUE,sep=";",dec=".")
 
 legparticle <- expression(Particle~concentration~(particles~mL^-1))
-legcarbon <- expression(Carbon~content~(�g~C~mL^-1))
+legcarbon <- expression(Carbon~content~(µg~C~mL^-1))
 
-Fig7 <-ggplot(data, aes(x=particles, y=carbon)) + 
+Fig6 <-ggplot(data, aes(x=particles, y=carbon)) + 
   geom_point()+
   theme_minimal(base_size = 22)+
   geom_smooth(method=glm , color="steelblue", fill="#69b3a2", se=TRUE)+
@@ -21,7 +22,8 @@ Fig7 <-ggplot(data, aes(x=particles, y=carbon)) +
   theme(axis.text.y = element_text(color="black",size=22))+ 
   theme(axis.line = element_line(colour = "black", size = 1, linetype = "solid"))
 
-Fig7
+Fig6
 
-ggsave(Fig7, file="Fig7.png", width=8.4, height=7, dpi=1500)
-#END
+ggsave(Fig6, file="Fig6.png", width=8.4, height=7, dpi=1500)
+
+#End
