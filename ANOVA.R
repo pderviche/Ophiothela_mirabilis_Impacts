@@ -11,7 +11,7 @@ data <- read.csv(file="feedingrates.csv",header=TRUE,sep=";",dec=".")
 
 # 1.1 Shapiro-Wilk
 shapiro.test(data$fr) #p-value > 0.05, we can assume the normality
-qqPlot(data$fr) #As all the points fall approximately along the reference line, we can assume normality
+qqPlot(data$fr) #As almost all the points fall approximately along the reference line, we can assume normality
 
 # 1.2 Levene's Test
 leveneTest(fr ~ group, data=data)  #p-value > 0.05, we can assume the homogeneity of variance 
@@ -22,8 +22,8 @@ model <- aov(fr ~ group + time + group*time, data=data)
 summary(model) #No significant differences
 anova(model) #No significant differences
 
-# 1.4 Akaike information criterion 
-AIC(model) #AIC = 382.1529
+# Remove all objects
+rm(list = ls())
 
 #########
 
@@ -33,8 +33,17 @@ data <- read.csv(file="feedingrates.csv",header=TRUE,sep=";",dec=".")
 # 2.1 Shapiro-Wilk
 shapiro.test(data$hci) #p-value < 0.05, we can not assume the normality
 qqPlot(data$hci) #As some of the points fall outside the reference line, we can not assume normality
-data$hci <- 1/(data$hci) #We applied inverse transformation to achieve the normal distribution 
-shapiro.test(data$hci) # p-value = 0.05, is close to normality assumption. We chose to proceed with this transformation to not use non-parametric analysis. Other transformations did not assume normality or homogeneity of variance (e.g. sqrt(x); log10(x))
+
+data$hci <- 1/(data$hci) #We applied inverse transformation to try to achieve the normal distribution 
+shapiro.test(data$hci) #p-value < 0.05, we can not assume the normality
+
+data <- read.csv(file="feedingrates correction.csv",header=TRUE,sep=";",dec=".")
+data$hci <- sqrt(data$hci)  #We applied sqrt transformation to try to achieve the normal distribution
+shapiro.test(data$hci) #p-value < 0.05, we can not assume the normality
+
+data <- read.csv(file="feedingrates correction.csv",header=TRUE,sep=";",dec=".")
+data$hci <- log10(data$hci)  #We applied log10 transformation to achieve the normal distribution
+shapiro.test(data$hci) # p-value = 0.07, we can  assume the normality
 
 # 2.2 Levene's Test
 leveneTest(hci ~ group, data=data) #p-value > 0.05, we can assume the homogeneity of variance
@@ -45,8 +54,8 @@ model <- aov(hci ~ group + time + group*time, data=data)
 summary(model) #No significant differences
 anova(model) #No significant differences
 
-# 2.4 Akaike information criterion 
-AIC(model) #AIC = -43.26106
+#Remove all objects
+rm(list = ls())
 
 #########
 
@@ -74,8 +83,8 @@ anova(model) #Significant differences
 # 2.4 Post hoc
 TukeyHSD(model)
 
-# 2.5 Akaike information criterion 
-AIC(model) #AIC = 239.5142
+#Remove all objects
+rm(list = ls())
 
 #########
 
@@ -102,4 +111,4 @@ summary(model) #No significant differences
 anova(model) #No significant differences
 #The carbon content at time zero within groups was not significantly different
 
-#END
+#nd
