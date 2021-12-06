@@ -5,14 +5,15 @@
 library(ggplot2)
 library(ggpubr)
 
-#Figure 9
+#Figure 8
+#Comparison of a the number of particles (particles mL-1 ; means ± standard error) and b the carbon content (µg C mL-1 ) within the chambers with Leptogorgia punicea hosts under high natural colonization of Ophiothela mirabilis (treatment), hosts naturally without brittle star individuals (host control), and no hosts or brittle stars (sampling artifact control) over time
 data <- read.csv(file="sweptclear.csv",header=TRUE,sep=";",dec=".")
 datanumber <- data[,1:6]
 datacarbon <- data[,c(1:2,7:10)]
 
 pd <- position_dodge(0.3) # move them .05 to the left and right
 legparticle <- expression(atop(Particle~concentration,(particles~mL^-1)))
-legcarbon <- expression(atop(Carbon~content,(�g~C~mL^-1)))
+legcarbon <- expression(atop(Carbon~content,(µg~C~mL^-1)))
 
 particle <- ggplot(datanumber, aes(x=time, y=particles, colour=group)) + 
   theme_minimal(base_size = 22)+
@@ -38,12 +39,13 @@ carbon <- ggplot(datacarbon, aes(x=time, y=carbon, colour=group)) +
   theme(axis.text.y = element_text(color="black",size=22))+ 
   theme(axis.line = element_line(colour = "black", size = 1, linetype = "solid"))
 
-Fig9 <- ggarrange(particle, carbon,  
+Fig8 <- ggarrange(particle, carbon,  
               common.legend = TRUE, legend = "right",
               labels = c("a", "b"),
               font.label = list(size = 22, color = "black", face = "bold", family = NULL),
               ncol = 2, nrow = 1)
-Fig9
+Fig8
 
-ggsave(Fig9, file="Fig9.png", width=17.4, height=6, dpi=1500)
-#END
+ggsave(Fig8, file="Fig8.png", width=17.4, height=6, dpi=1500)
+
+#End
