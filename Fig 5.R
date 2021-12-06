@@ -6,17 +6,18 @@ library(ggplot2)
 library(ggpubr)
 
 #Figure 6
+#Fig. 5 Comparison of a the feeding rate (particles g DW-1 h -1 ) and b the heterotrophic carbon input (µg C g DW-1 h -1 ) of the octocoral Leptogorgia punicea under high natural colonization of Ophiothela mirabilis (treatment) and the octocoral naturally without brittle star individuals (host control)
 data <- read.csv(file="feedingrates.csv",header=TRUE,sep=";",dec=".")
 
 legFR <- expression(atop(Feeding~rate,(particles~g~DW^-1~h^-1)))
-legHCI <- expression(atop(Heterotrophic~carbon~input,(�g~C~g~DW^-1~h^-1)))
+legHCI <- expression(atop(Heterotrophic~carbon~input,(µg~C~g~DW^-1~h^-1)))
 
 
 FR<- ggplot(data, aes(x=group, y=fr)) + 
   geom_boxplot(fill="slateblue", alpha=0.2, width=.25) + 
   theme_minimal(base_size = 22)+
   xlab(" ") + ylab(legFR)+
-  scale_y_continuous(breaks=seq(0,4000000,1000000))+
+  scale_y_continuous(breaks=seq(0,7000000,2000000))+
   theme(axis.text.x = element_text(color="black",size=22))+
   theme(axis.text.y = element_text(color="black",size=22))+ 
   theme(axis.line = element_line(colour = "black", size = 1, linetype = "solid"))
@@ -31,12 +32,13 @@ HCI<- ggplot(data, aes(x=group, y=hci)) +
   theme(axis.text.y = element_text(color="black",size=22))+ 
   theme(axis.line = element_line(colour = "black", size = 1, linetype = "solid"))
 
-Fig6 <- ggarrange(FR, HCI,  
+Fig5 <- ggarrange(FR, HCI,  
                   labels = c("a", "b"),
                   font.label = list(size = 22, color = "black", face = "bold", family = NULL),
                   ncol = 2, nrow = 1)
-Fig6
+Fig5
 
 
-ggsave(Fig6, file="Fig6.png", width=17.4, height=7, dpi=1500)
-#END
+ggsave(Fig5, file="Fig5.png", width=14, height=5.6, dpi=1500)
+
+#End
