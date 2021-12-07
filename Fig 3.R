@@ -41,6 +41,6 @@ Fig3 <- ggarrange(DWocto, DW.ophi,
                   ncol = 1, nrow = 2)
 Fig3
 
-ggsave(Fig3, file="Fig4.png", width=17.4, height=7, dpi=1500)
+ggsave(Fig3, file="Fig3.png", width=17.4, height=7, dpi=1500)
 
 #End
