@@ -21,6 +21,6 @@ Fig4 <- ggplot(data, aes(x=diameter)) +
 
 Fig4
 
-ggsave(Fig4, file="Fig5.png", width=17.4, height=7, dpi=1500)
+ggsave(Fig4, file="Fig4.png", width=17.4, height=7, dpi=1500)
 
 #End
