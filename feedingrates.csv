@@ -1,0 +1,19 @@
+group;time;replicate;fr;hci
+Treatment;0to1;1;3372140.132;86.63897626
+Host control;0to1;1;2848462.925;5.978609458
+Treatment;0to1;2;163345.6928;543.1234146
+Host control;0to1;2;881257.6475;NA
+Treatment;0to1;3;NA;NA
+Host control;0to1;3;NA;NA
+Treatment;1to2;1;4759857.03;NA
+Host control;1to2;1;3184190.571;34.05419622
+Treatment;1to2;2;NA;NA
+Host control;1to2;2;NA;190.6127726
+Treatment;1to2;3;3318513.254;38.6519856
+Host control;1to2;3;3221144.647;78.42260713
+Treatment;2to3;1;NA;38.42783014
+Host control;2to3;1;1131714.728;NA
+Treatment;2to3;2;4591508.952;108.1673602
+Host control;2to3;2;7211630.179;36.80489881
+Treatment;2to3;3;1972827.656;NA
+Host control;2to3;3;2955941.6;NA
