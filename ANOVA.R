@@ -37,11 +37,11 @@ qqPlot(data$hci) #As some of the points fall outside the reference line, we can 
 data$hci <- 1/(data$hci) #We applied inverse transformation to try to achieve the normal distribution 
 shapiro.test(data$hci) #p-value < 0.05, we can not assume the normality
 
-data <- read.csv(file="feedingrates correction.csv",header=TRUE,sep=";",dec=".")
+data <- read.csv(file="feedingrates.csv",header=TRUE,sep=";",dec=".") #read again
 data$hci <- sqrt(data$hci)  #We applied sqrt transformation to try to achieve the normal distribution
 shapiro.test(data$hci) #p-value < 0.05, we can not assume the normality
 
-data <- read.csv(file="feedingrates correction.csv",header=TRUE,sep=";",dec=".")
+data <- read.csv(file="feedingrates.csv",header=TRUE,sep=";",dec=".") #read again
 data$hci <- log10(data$hci)  #We applied log10 transformation to achieve the normal distribution
 shapiro.test(data$hci) # p-value = 0.07, we can  assume the normality
 
